@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Products from "./components/ProductCard/Products";
+import ProductCard from "./components/ProductCard/Products";
 
-export default function App() {
+const { View, Text, StyleSheet, Image } = require("react-native");
+const style = StyleSheet.create({
+  heading: {
+    fontSize: 20,
+    marginTop: 40,
+    marginBottom: 30,
+    fontWeight: "bold",
+    color: "blue",
+    textAlign: "center",
+    borderBottomColor: "#006BF8",
+    borderBottomWidth: 1,
+    paddingBottom: 10,
+  },
+});
+
+export default function Store() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      {/* // heading */}
+      <View>
+        <Text style={style.heading}>Product Application</Text>
+      </View>
+      {/* // card container */}
+      <View style={style.container}>
+        {/* card 1 */}
+        <Products />
+      </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
